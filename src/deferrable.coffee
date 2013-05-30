@@ -10,6 +10,9 @@ module.exports = ($) ->
     (@[func] or func).call(@, args..., buildResolver(deferred))
     deferred.promise
 
-  Object.defineProperty Object::, 'defer', value: defer
+  Object.defineProperty Object::, 'defer', {
+    value: defer
+    writable: true
+  }
 
   defer
